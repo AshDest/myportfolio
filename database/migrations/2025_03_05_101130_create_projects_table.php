@@ -15,9 +15,12 @@ return new class extends Migration {
             $table->string('title');
             $table->string('caption');
             $table->text('details');
-            $table->json('technologies'); // Store as JSON array
+            $table->json('technologies');
             $table->string('image');
             $table->string('link')->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }

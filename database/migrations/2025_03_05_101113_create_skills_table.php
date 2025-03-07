@@ -13,8 +13,9 @@ return new class extends Migration {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('proficiency'); // 1-100
-            $table->string('color')->default('blue'); // for different tag colors
+            $table->integer('proficiency')->default(0);
+            $table->string('color')->default('blue');
+            $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
     }
